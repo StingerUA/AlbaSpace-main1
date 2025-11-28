@@ -40,15 +40,7 @@ const AppRoutes = () => {
 const App: React.FC = () => {
   return (
     <HashRouter>
-      <div 
-        className="flex flex-col min-h-screen font-sans bg-black"
-        style={{
-          backgroundImage: "url('https://i.imgur.com/gK2xR5w.jpeg')",
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+      <div className="flex flex-col min-h-screen font-sans bg-white text-gray-900">
         <Header />
         <main className="flex-grow">
           <AppRoutes />
