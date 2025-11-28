@@ -42,25 +42,33 @@ const ModelPage: React.FC = () => {
       exit="out"
       variants={pageVariants}
       transition={{ duration: 0.5 }}
-      className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 my-8 bg-white rounded-lg shadow-xl"
+      className="bg-white"
     >
-      <motion.div 
-        className="max-w-6xl mx-auto"
+      <motion.div
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.h1 variants={itemVariants} className="text-4xl font-bold text-center mb-4 text-gray-900">{data.title}</motion.h1>
-        <motion.p variants={itemVariants} className="text-lg text-gray-600 text-center mb-8">{data.description}</motion.p>
-        
-        <motion.div variants={itemVariants} className="mb-8 bg-gray-50 p-4 rounded-lg shadow-inner">
+        <motion.h1
+          variants={itemVariants}
+          className="text-4xl font-bold text-center mb-10 text-gray-900 uppercase tracking-tight"
+        >
+          {data.title}
+        </motion.h1>
+
+        <motion.div variants={itemVariants} className="mb-12">
           <ModelViewer src={data.glbUrl} alt={data.title} />
         </motion.div>
 
-        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {data.images.map((img, index) => (
-            <div key={index} className="overflow-hidden rounded-lg shadow-md">
-              <img src={img} alt={`${data.title} - view ${index + 1}`} className="w-full h-auto object-cover" />
+            <div key={index} className="flex justify-center">
+              <img
+                src={img}
+                alt={`${data.title} - view ${index + 1}`}
+                className="w-full max-w-2xl h-auto object-contain shadow-md"
+              />
             </div>
           ))}
         </motion.div>
